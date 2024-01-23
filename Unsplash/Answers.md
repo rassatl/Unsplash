@@ -35,4 +35,9 @@ extension Image {
     }
 }
 
-##
+# 4 - Appel-Reseau
+# Exercice 3
+## Expliquez 3 façons différences de faire un appel asynchrone en Swift
+ - async/await : Permettant au programme de continuer l'exécution sans bloquer le thread.
+ - Combine : "Combine" est un framework introduit par Apple pour la programmation réactive en Swift. Il permet une approche déclarative pour gérer les flux de données asynchrones
+ - completionHandler / GCD : Permet d'exécuter des blocs de code sur des files d'attente spécifiques, généralement sur des files d'attente de fond, et utiliser des completionHandler pour traiter les résultats.
