@@ -16,8 +16,14 @@ struct UnsplashPhoto: Codable, Identifiable {
 
 struct User: Codable {
     let name: String
+    let profile_image: ProfileImage
 }
 
+struct ProfileImage: Codable {
+    let large: String
+    let medium: String
+    let small: String
+}
 struct UnsplashPhotoUrls: Codable {
     let raw: String
     let full: String

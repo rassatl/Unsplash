@@ -16,6 +16,14 @@ struct DetailPhoto: View {
     var body: some View {
         NavigationStack{
             VStack{
+                AsyncImage(url: URL(string: photo.user.profile_image.large)){ image in
+                    image
+                        .centerCropped()
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .frame(width: 50, height: 50)
+                } placeholder: {
+                    ProgressView()
+                }
                 Picker("Type", selection: $screenResolution) {
                     ForEach(ScreenResolution.allCases, id: \.self) { resolution in
                         Text(resolution.rawValue)
@@ -36,5 +44,5 @@ struct DetailPhoto: View {
 }
 
 #Preview {
-    DetailPhoto(photo: UnsplashPhoto(id: "img",slug: "slug_image",user: User(name: "hop"),urls: UnsplashPhotoUrls(raw: "raw",full: "full",regular: "regular",small: "small",thumb: "thumb")))
+    DetailPhoto(photo: UnsplashPhoto(id: "img",slug: "slug_image",user: User(name: "hop", profile_image: ProfileImage(large: "String", medium: "String", small: "String")),urls: UnsplashPhotoUrls(raw: "raw",full: "full",regular: "regular",small: "small",thumb: "thumb")))
 }

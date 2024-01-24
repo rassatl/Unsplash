@@ -24,6 +24,6 @@ struct TopicPhotosView: View {
 }
 
 #Preview {
-    TopicPhotosView(topic: UnsplashTopic(id: "topic",slug: "slug_topic",cover_photo: UnsplashPhoto(id: "img",slug: "slug_image",user: User(name: "hop"),urls: UnsplashPhotoUrls(raw: "raw",full: "full",regular: "regular",small: "small",thumb: "thumb")))
+    TopicPhotosView(topic: UnsplashTopic(id: "topic",slug: "slug_topic",cover_photo: UnsplashPhoto(id: "img",slug: "slug_image",user: User(name: "hop", profile_image: ProfileImage(large: "String", medium: "String", small: "String")),urls: UnsplashPhotoUrls(raw: "raw",full: "full",regular: "regular",small: "small",thumb: "thumb")))
     )
 }
